@@ -29,7 +29,6 @@
 
 @media (min-width: 960px) {
 	.history-sidebar {
-		flex-grow: 1;
 		max-width: 200px;
 	}
 }
