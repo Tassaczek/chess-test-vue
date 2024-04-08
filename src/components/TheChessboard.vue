@@ -2,6 +2,10 @@
 const horizontal = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
 const vertical = [1, 2, 3, 4, 5, 6, 7, 8];
 
+const emit = defineEmits<{
+	(e: 'click', position: string): void;
+}>();
+
 const charToNumber = (char: string): number => {
 	return char.toLowerCase().charCodeAt(0) - 96;
 };
@@ -17,7 +21,7 @@ const charToNumber = (char: string): number => {
 				:class="[
 					{ 'chessboard__square--dark': (charToNumber(x) + y) % 2 === 0 },
 				]"
-				@click="console.log(x + y)"
+				@click="emit('click', x + y)"
 			></div>
 		</template>
 	</div>

@@ -1,17 +1,30 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+interface Props {
+	history: string[];
+	activeSquareIndex: number;
+}
+const props = defineProps<Props>();
+
+const emit = defineEmits<{
+	(e: 'clearHistory'): void;
+}>();
+</script>
 
 <template>
 	<div class="history-sidebar">
 		<div class="history-sidebar__navigation">
 			<button>prev</button>
 			<button>next</button>
+			<button @click="emit('clearHistory')">Reset</button>
 		</div>
 
 		<ol>
-			<li>a8</li>
-			<li>a8</li>
-			<li>a8</li>
-			<li>a8</li>
+			<li
+				v-for="position in props.history"
+				:key="position"
+			>
+				{{ position }}
+			</li>
 		</ol>
 	</div>
 </template>
