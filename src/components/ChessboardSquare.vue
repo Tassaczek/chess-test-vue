@@ -26,12 +26,12 @@ const emit = defineEmits<{
 	aspect-ratio: 1 / 1;
 	display: grid;
 	place-items: center;
-	background-color: rgb(249, 236, 211);
+	background-color: var(--chessboard-square--light);
 	&--dark {
-		background-color: #743c1e;
+		background-color: var(--chessboard-square--dark);
 	}
 	&--active {
-		background-color: #77c8c5;
+		background-color: var(--active);
 	}
 }
 </style>

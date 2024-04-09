@@ -38,7 +38,7 @@ const charToNumber = (char: string): number => {
     the viewport's height, useful for desktops where height can limit visibility.
     100% view height minus top and bottom margin. */
 	max-width: calc(100vh - 4rem);
-	border: 1px solid rgb(249, 236, 211);
+	border: 1px solid var(--primary);
 	border-radius: 1%;
 	overflow: hidden;
 }

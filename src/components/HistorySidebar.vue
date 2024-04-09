@@ -33,7 +33,7 @@ const emit = defineEmits<{
 .history-sidebar {
 	border-radius: 5px;
 	width: 100%;
-	background-color: rgb(249, 236, 211);
+	background-color: var(--primary);
 	&__navigation {
 		display: flex;
 		justify-content: center;

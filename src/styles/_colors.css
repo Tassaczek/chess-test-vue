@@ -1,0 +1,9 @@
+:root {
+	--primary: #f9ecd3;
+	--secondary: #743c1e;
+	--active: #77c8c5;
+	--black: #1e1e1e;
+
+	--chessboard-square--light: var(--primary);
+	--chessboard-square--dark: var(--secondary);
+}

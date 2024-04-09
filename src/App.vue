@@ -6,8 +6,4 @@ import GameView from './views/GameView.vue';
 	<GameView />
 </template>
 
-<style>
-body {
-	background-color: #1e1e1e;
-}
-</style>
+<style></style>
