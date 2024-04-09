@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { useGameStore } from '../stores/game';
+import ChessboardSquare from './ChessboardSquare.vue';
+
+const store = useGameStore();
 const horizontal = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
 const vertical = [1, 2, 3, 4, 5, 6, 7, 8];
 
@@ -14,15 +18,13 @@ const charToNumber = (char: string): number => {
 <template>
 	<div class="chessboard">
 		<template v-for="y in [...vertical].reverse()">
-			<div
+			<ChessboardSquare
 				v-for="x in horizontal"
 				:key="x + y"
-				class="chessboard__square"
-				:class="[
-					{ 'chessboard__square--dark': (charToNumber(x) + y) % 2 === 0 },
-				]"
+				:dark="(charToNumber(x) + y) % 2 === 0"
+				:active="x + y === store.history[store.activeSquareIndex]"
 				@click="emit('click', x + y)"
-			></div>
+			></ChessboardSquare>
 		</template>
 	</div>
 </template>
@@ -39,18 +41,5 @@ const charToNumber = (char: string): number => {
 	border: 1px solid rgb(249, 236, 211);
 	border-radius: 1%;
 	overflow: hidden;
-	&__square {
-		aspect-ratio: 1 / 1;
-		display: grid;
-		place-items: center;
-		background-color: rgb(249, 236, 211);
-		&--dark {
-			background-color: #743c1e;
-		}
-		// TODO: Use it as active
-		&:hover {
-			background-color: #77c8c5;
-		}
-	}
 }
 </style>
