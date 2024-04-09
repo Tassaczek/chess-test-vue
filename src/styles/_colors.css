@@ -3,6 +3,7 @@
 	--secondary: #743c1e;
 	--active: #77c8c5;
 	--black: #1e1e1e;
+	--neutral-1: #3a3a3a;
 
 	--chessboard-square--light: var(--primary);
 	--chessboard-square--dark: var(--secondary);
