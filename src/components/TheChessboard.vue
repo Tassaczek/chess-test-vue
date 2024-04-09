@@ -16,21 +16,27 @@ const charToNumber = (char: string): number => {
 </script>
 
 <template>
-	<div class="chessboard">
-		<template v-for="y in [...vertical].reverse()">
-			<ChessboardSquare
-				v-for="x in horizontal"
-				:key="x + y"
-				:dark="(charToNumber(x) + y) % 2 === 0"
-				:active="x + y === store.history[store.activeSquareIndex]"
-				@click="emit('click', x + y)"
-			></ChessboardSquare>
-		</template>
+	<div class="chessboard__container">
+		<div class="chessboard">
+			<template v-for="y in [...vertical].reverse()">
+				<ChessboardSquare
+					v-for="x in horizontal"
+					:key="x + y"
+					:dark="(charToNumber(x) + y) % 2 === 0"
+					:active="x + y === store.history[store.activeSquareIndex]"
+					@click="emit('click', x + y)"
+				></ChessboardSquare>
+			</template>
+		</div>
 	</div>
 </template>
 
 <style scoped lang="scss">
 .chessboard {
+	&__container {
+		width: 100%;
+		max-width: calc(100vh - 4rem);
+	}
 	display: grid;
 	grid-template-columns: repeat(8, 1fr);
 	width: 100%;
