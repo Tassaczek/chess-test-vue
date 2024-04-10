@@ -33,17 +33,15 @@ const charToNumber = (char: string): number => {
 
 <style scoped lang="scss">
 .chessboard {
+	/* Ensures the chessboard is fully visible by adjusting its size based on
+    the viewport's height, useful for desktops where height can limit visibility.
+    100% view height minus top and bottom margin. */
 	&__container {
 		width: 100%;
 		max-width: calc(100vh - 4rem);
 	}
 	display: grid;
 	grid-template-columns: repeat(8, 1fr);
-	width: 100%;
-	/* Ensures the chessboard is fully visible by adjusting its size based on
-    the viewport's height, useful for desktops where height can limit visibility.
-    100% view height minus top and bottom margin. */
-	max-width: calc(100vh - 4rem);
 	border: 1px solid var(--primary);
 	border-radius: 1%;
 	overflow: hidden;
