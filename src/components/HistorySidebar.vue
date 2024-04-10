@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import { ref, watch, nextTick } from 'vue';
+import type { Ref } from 'vue';
 import BaseButton from './BaseButton.vue';
+
 interface Props {
 	history: string[];
 	activeSquareIndex: number;
@@ -9,6 +12,20 @@ const props = defineProps<Props>();
 const emit = defineEmits<{
 	(e: 'clearHistory'): void;
 }>();
+
+// Watcher scrolls to the bottom when new items are added to history, ensuring visibility of the latest item.
+const historySidebar: Ref<HTMLElement | null> = ref(null);
+
+watch(
+	props.history,
+	async () => {
+		await nextTick();
+		if (historySidebar.value) {
+			historySidebar.value.scrollTop = historySidebar.value.scrollHeight;
+		}
+	},
+	{ deep: true },
+);
 </script>
 
 <template>
@@ -20,7 +37,10 @@ const emit = defineEmits<{
 				>RESET</BaseButton
 			>
 		</section>
-		<section class="history-sidebar__main">
+		<section
+			ref="historySidebar"
+			class="history-sidebar__main"
+		>
 			<ol>
 				<li
 					v-for="position in props.history"
@@ -56,6 +76,27 @@ const emit = defineEmits<{
 		background-color: var(--primary);
 		overflow-y: auto;
 		height: 350px;
+		li {
+			list-style-position: inside;
+			padding-left: 1rem;
+			line-height: 1.5;
+			&:nth-child(even) {
+				background-color: var(--li-bg-alternate);
+			}
+		}
+
+		&::-webkit-scrollbar {
+			width: 6px;
+		}
+		&::-webkit-scrollbar-track {
+			background: var(--primary);
+		}
+		&::-webkit-scrollbar-thumb {
+			background: var(--neutral-1);
+		}
+		// for Firefox 64+
+		scrollbar-width: thin;
+		scrollbar-color: var(--neutral-1) var(--primary);
 	}
 	&__navigation {
 		border-bottom-left-radius: 5px;

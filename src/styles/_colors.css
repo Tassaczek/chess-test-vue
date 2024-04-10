@@ -7,4 +7,6 @@
 
 	--chessboard-square--light: var(--primary);
 	--chessboard-square--dark: var(--secondary);
+
+	--li-bg-alternate: #d1c6b2;
 }
