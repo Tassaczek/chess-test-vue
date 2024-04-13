@@ -9,7 +9,7 @@ export const useGameStore = defineStore('game', {
 	state: () => {
 		return {
 			history: [],
-			activeSquareIndex: -1,
+			activeSquareIndex: -1, // Keeps track of the current highlighted square
 		} as GameStoreState;
 	},
 	actions: {
