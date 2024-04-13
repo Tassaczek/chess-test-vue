@@ -12,7 +12,10 @@ function updateClickedPosition(position: string) {
 
 <template>
 	<div class="game-view">
-		<TheChessboard @click="updateClickedPosition($event)" />
+		<TheChessboard
+			:active-square="store.history[store.activeSquareIndex]"
+			@click="updateClickedPosition($event)"
+		/>
 		<HistorySidebar
 			:history="store.history"
 			:active-square-index="store.activeSquareIndex"

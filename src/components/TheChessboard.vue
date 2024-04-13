@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import charToNumber from '../utils/charToNumber';
-import { useGameStore } from '../stores/game';
 import ChessboardSquare from './ChessboardSquare.vue';
 
-const store = useGameStore();
+interface Props {
+	activeSquare: string;
+}
+const props = defineProps<Props>();
+
 const horizontal = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
 const vertical = [1, 2, 3, 4, 5, 6, 7, 8];
 
@@ -20,7 +23,7 @@ const emit = defineEmits<{
 					v-for="x in horizontal"
 					:key="x + y"
 					:dark="(charToNumber(x) + y) % 2 === 0"
-					:active="x + y === store.history[store.activeSquareIndex]"
+					:active="x + y === props.activeSquare"
 					@click="emit('click', x + y)"
 				></ChessboardSquare>
 			</template>
