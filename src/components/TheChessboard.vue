@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import charToNumber from '../utils/charToNumber';
 import { useGameStore } from '../stores/game';
 import ChessboardSquare from './ChessboardSquare.vue';
 
@@ -9,10 +10,6 @@ const vertical = [1, 2, 3, 4, 5, 6, 7, 8];
 const emit = defineEmits<{
 	(e: 'click', position: string): void;
 }>();
-
-const charToNumber = (char: string): number => {
-	return char.toLowerCase().charCodeAt(0) - 96;
-};
 </script>
 
 <template>
