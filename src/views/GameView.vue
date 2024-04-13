@@ -4,17 +4,12 @@ import HistorySidebar from '../components/HistorySidebar.vue';
 import { useGameStore } from '../stores/game';
 
 const store = useGameStore();
-
-function updateClickedPosition(position: string) {
-	store.addClick(position);
-}
 </script>
-
 <template>
 	<div class="game-view">
 		<TheChessboard
 			:active-square="store.history[store.activeSquareIndex]"
-			@click="updateClickedPosition($event)"
+			@click="store.addClick($event)"
 		/>
 		<HistorySidebar
 			:history="store.history"
