@@ -3,6 +3,9 @@
 // effectively mapping each letter to its alphabetical index.
 
 const charToNumber = (char: string): number => {
+	if (!/^[a-zA-Z]$/.test(char)) {
+		throw new Error('Input must be a single lowercase or uppercase letter');
+	}
 	return char.toLowerCase().charCodeAt(0) - 96;
 };
 
