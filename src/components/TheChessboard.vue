@@ -2,8 +2,11 @@
 import charToNumber from '../utils/charToNumber';
 import ChessboardSquare from './ChessboardSquare.vue';
 
+// Store returns string: 'a1', 'b8', etc or -1 for empty arrays.
+type ActiveSquare = string | -1;
+
 interface Props {
-	activeSquare: string;
+	activeSquare: ActiveSquare;
 }
 const props = defineProps<Props>();
 
