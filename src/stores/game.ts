@@ -18,7 +18,10 @@ export const useGameStore = defineStore('game', {
 			this.activeSquareIndex++;
 		},
 		clearHistory() {
-			this.$reset();
+			// this.$reset() causes problems with reference retention.
+			// After reset, changes are no longer observed by the watcher in HistorySidebar.
+			this.history.splice(0, this.history.length);
+			this.activeSquareIndex = -1;
 		},
 	},
 });
