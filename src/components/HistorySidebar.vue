@@ -43,8 +43,9 @@ watch(
 		>
 			<ol>
 				<li
-					v-for="position in props.history"
-					:key="position"
+					v-for="(position, index) in props.history"
+					:key="index"
+					:class="[index === props.activeSquareIndex ? 'item--active' : '']"
 				>
 					{{ position }}
 				</li>
@@ -79,9 +80,15 @@ watch(
 		li {
 			list-style-position: inside;
 			padding-left: 1rem;
-			line-height: 1.5;
+			line-height: 2;
+			font-size: 0.875rem;
+			font-weight: 600;
+			color: var(--black);
 			&:nth-child(even) {
 				background-color: var(--li-bg-alternate);
+			}
+			&.item--active {
+				background-color: var(--active);
 			}
 		}
 
