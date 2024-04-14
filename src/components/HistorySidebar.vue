@@ -33,6 +33,7 @@ watch(
 		<section class="history-sidebar__reset">
 			<BaseButton
 				aria-label="Reset"
+				data-cy="history-sidebar__reset-button"
 				@click="emit('clearHistory')"
 				>RESET</BaseButton
 			>
@@ -46,6 +47,7 @@ watch(
 					v-for="(position, index) in props.history"
 					:key="index"
 					:class="[index === props.activeSquareIndex ? 'item--active' : '']"
+					data-cy="history-sidebar__item"
 				>
 					{{ position }}
 				</li>
