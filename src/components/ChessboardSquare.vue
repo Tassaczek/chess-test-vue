@@ -3,7 +3,11 @@ interface Props {
 	dark: boolean;
 	active: boolean;
 }
-const props = defineProps<Props>();
+
+const props = withDefaults(defineProps<Props>(), {
+	dark: false,
+	active: false,
+});
 
 const emit = defineEmits<{
 	(e: 'click'): void;
