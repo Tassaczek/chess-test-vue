@@ -24,9 +24,11 @@ const emit = defineEmits<{
 			<template v-for="y in [...vertical].reverse()">
 				<ChessboardSquare
 					v-for="x in horizontal"
+					:id="x + y"
 					:key="x + y"
 					:dark="(charToNumber(x) + y) % 2 === 0"
 					:active="x + y === props.activeSquare"
+					data-test="chessboard-square"
 					@click="emit('click', x + y)"
 				></ChessboardSquare>
 			</template>
