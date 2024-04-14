@@ -51,13 +51,7 @@ watch(
 				</li>
 			</ol>
 		</section>
-		<section class="history-sidebar__navigation">
-			<BaseButton
-				aria-label="Reset"
-				@click="emit('clearHistory')"
-				>Navigation here</BaseButton
-			>
-		</section>
+		<section class="history-sidebar__navigation"></section>
 	</div>
 </template>
 
