@@ -6,7 +6,7 @@
 
 - Clone the repository.
 - Ensure you have Node.js version 18 or higher installed.
-- Install dependencies with npm i.
+- Install dependencies with `npm i`.
 - Set up `husky` by running `npm run prepare`
 
 ## How to run locally
