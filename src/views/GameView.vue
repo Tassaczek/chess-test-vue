@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import TheChessboard from '../components/TheChessboard.vue';
-import HistorySidebar from '../components/HistorySidebar.vue';
-import { useGameStore } from '../stores/game';
+import TheChessboard from '@/components/TheChessboard.vue';
+import HistorySidebar from '@/components/HistorySidebar.vue';
+import { useGameStore } from '@/stores/game';
 
 const store = useGameStore();
 </script>
