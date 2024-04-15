@@ -1,6 +1,7 @@
 @import url('./_reset.css');
 @import url('./_colors.css');
 @import url('./_fonts.css');
+@import url('./_variables.css');
 
 body {
 	background-color: var(--black);

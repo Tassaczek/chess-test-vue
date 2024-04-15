@@ -28,7 +28,7 @@ function clicked() {
 	padding: 0.75rem 1.625rem;
 	font-size: 0.875rem;
 	font-weight: 500;
-	border-radius: 5px;
+	border-radius: var(--border-radius);
 	border: none;
 	background-color: var(--black);
 	color: var(--primary);

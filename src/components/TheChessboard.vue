@@ -48,7 +48,7 @@ const emit = defineEmits<{
 	display: grid;
 	grid-template-columns: repeat(8, 1fr);
 	border: 1px solid var(--primary);
-	border-radius: 1%;
+	border-radius: var(--border-radius);
 	overflow: hidden;
 }
 </style>
