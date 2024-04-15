@@ -1,4 +1,46 @@
+<img src="images/logo.webp" alt="Logo" width="100"/>
+
 # Chess.com - Front End Programming Challenge
+
+## How to start
+- Clone the repository.
+- Ensure you have Node.js version 18 or higher installed.
+- Install dependencies with npm i.
+- Set up `husky` by running `npm run prepare`
+
+## How to run locally
+- Start the development server with `npm run dev`.
+- Access the application at: http://localhost:5173/
+
+## Running tests
+- Run unit tests using `npm run test:unit` with Vitest.
+- Check code coverage with `npm run testcoverage:unit`.
+- Execute Cypress tests using `npm run cypress:run`. Ensure the local server is running.
+
+## Production build
+- Build the application for production with `npm run build`.
+
+
+## Next steps
+#### Navigation
+Implement `next` and `prev` buttons in the HistorySidebar navigation section.
+Use `activeSquareIndex` for tracking active square. 
+#### Chessboard
+Add board notation as named slots in `ChessboardSquare` component.
+ 
+## Notes: Application Architecture
+For this Vue application, I adopted the standard Vue structure suitable for small to medium-sized projects. This approach supports the straightforward requirements and current scale of chessboard application, where clicking a square highlights it and logs the move to a sidebar.
+
+Should the application's scope expand, I would plan to transition to a more modular architecture. This would involve a `modules` folder where each module contains its own set of components, store, routes, translations, and types dedicated to specific features. A central components folder would remain to house shared UI elements like `BaseButton` and `BaseInput`.
+
+## Notes: GIT
+GIT Remote Origin was removed.
+
+origin: git@github.com:ChessCom/frontendtest.git (fetch)
+
+origin: git@github.com:ChessCom/frontendtest.git (push)
+
+---
 
 Welcome to the [Chess.com](https://chess.com) front end programming challenge!
 
@@ -21,16 +63,6 @@ Welcome to the [Chess.com](https://chess.com) front end programming challenge!
 # Questions & Feedback
 
 Please contact Nick Kampa (nkampa@chess.com) with any questions or feedback regarding this challenge.
-
-# Vue 3 + TypeScript + Vite
-
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
-
-## Recommended Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
-
-- Use [vue-tsc](https://github.com/vuejs/language-tools/tree/master/packages/tsc) for performing the same type checking from the command line, or for generating d.ts files for SFCs.
 
 ### Notes
 
