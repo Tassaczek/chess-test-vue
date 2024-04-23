@@ -2,6 +2,10 @@
 
 # Chess.com - Front End Programming Challenge
 
+## Live Demo
+
+[View demo](https://damianbossak.com/chess/)
+
 ## How to start
 
 - Clone the repository.
@@ -43,11 +47,7 @@ Should the application's scope expand, I would plan to transition to a more modu
 
 ## Notes: GIT
 
-GIT Remote Origin was removed.
-
-origin: git@github.com:ChessCom/frontendtest.git (fetch)
-
-origin: git@github.com:ChessCom/frontendtest.git (push)
+GIT Remote Origin was changed.
 
 ---
 
